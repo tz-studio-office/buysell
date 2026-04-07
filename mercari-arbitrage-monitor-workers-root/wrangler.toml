@@ -1,0 +1,31 @@
+name = "mercari-arbitrage-monitor"
+main = "src/index.ts"
+compatibility_date = "2026-04-07"
+workers_dev = true
+
+[observability]
+enabled = true
+
+[triggers]
+crons = [
+  "0 21 * * *",
+  "15 * * * *",
+  "25 * * * *"
+]
+
+[vars]
+APP_NAME = "mercari-arbitrage-monitor"
+MERCARI_MAX_PAGES_PER_CATEGORY = "5"
+SUPPLIER_MAX_PAGES_PER_SOURCE = "5"
+HTTP_TIMEOUT_MS = "15000"
+HTTP_RETRY_COUNT = "2"
+ENABLE_DETAIL_ENRICHMENT = "true"
+MARKETPLACE_FEE_RATE = "0.10"
+DEFAULT_SHIPPING_COST_YEN = "850"
+RUN_MERCARI_CRON = "0 21 * * *"
+RUN_SUPPLIERS_CRON = "15 * * * *"
+RUN_MATCH_CRON = "25 * * * *"
+
+# Example JSON values to move into Cloudflare secrets/vars:
+# MERCARI_CATEGORY_CONFIG = '[{"key":"mens_tops","label":"メンズ トップス","categoryId":"700","keyword":""}]'
+# SUPPLIER_SOURCE_CONFIG = '[{"source":"secondstreet","label":"セカンドストリート","seedUrls":["https://www.2ndstreet.jp/search?keyword=%E3%83%8A%E3%82%A4%E3%82%AD&page={page}"]},{"source":"buzzstore","label":"BAZZSTORE","seedUrls":["https://www.bazzstore.com/?s=%E3%83%8A%E3%82%A4%E3%82%AD&post_type=item&paged={page}"]},{"source":"offmoll","label":"OFF MALL","seedUrls":["https://netmall.hardoff.co.jp/search/?keyword=%E3%83%8A%E3%82%A4%E3%82%AD&page={page}"]}]'
