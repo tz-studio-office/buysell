@@ -1,6 +1,6 @@
 # Mercari Arbitrage Monitor (Workers)
 
-Cloudflare Workers + Supabase ベースで、以下を自動化するためのリポジトリです。
+Cloudflare Workers + Supabase ベースで、以下を自動化するためのリポジトリです
 
 - メルカリの売却済み商品を日次収集
 - セカスト / BAZZSTORE / OFF MALL の在庫を巡回
